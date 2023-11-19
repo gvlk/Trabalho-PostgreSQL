@@ -1,3 +1,7 @@
+# Guilherme Azambuja - 149429
+# https://github.com/gvlk/Trabalho-PostgreSQL
+# Leia o README.md
+
 from database_setup import database_setup
 
 DBNAME = "EMPRESA"
