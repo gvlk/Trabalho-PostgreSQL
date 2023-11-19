@@ -15,6 +15,11 @@ def database_setup(dbname: str, user: str, password: str, host: str, port: str) 
     # Criar um cursor
     cursor = conn.cursor()
 
+    # Criar tabelas
+    with open('sql/create_tables.sql', 'r') as file:
+        sql_query = file.read()
+    cursor.execute(sql_query)
+
     # Inserir dados fictícios usando a biblioteca Faker
     fake = Faker()
 
