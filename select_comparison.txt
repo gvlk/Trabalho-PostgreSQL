@@ -1,0 +1,42 @@
+SELECT Salario FROM FUNCIONARIO WHERE Salario > 200 AND Salario < 500
+COM ÍNDICE 7 ms
+SEM ÍNDICE 20 ms
+
+SELECT Projlocal FROM PROJETO WHERE Projlocal > 100 AND Projlocal < 150
+COM ÍNDICE 2 ms
+SEM ÍNDICE 3 ms
+
+SELECT Projlocal, Cpf FROM PROJETO P, FUNCIONARIO F WHERE P. Dnum = F.Dnr AND Projlocal = 1 AND Cpf > 5000
+COM ÍNDICE 4 ms
+SEM ÍNDICE 10 ms
+
+SELECT Cpf FROM FUNCIONARIO WHERE Cpf > 8000 AND Cpf < 9000
+COM ÍNDICE 1 ms
+SEM ÍNDICE 3 ms
+
+SELECT Cpf, Projlocal FROM FUNCIONARIO F, PROJETO P WHERE F.Dnr = P.Dnum AND Cpf = 6000 AND Projlocal > 50
+COM ÍNDICE 1 ms
+SEM ÍNDICE 2 ms
+
+SELECT Projlocal, Cpf FROM PROJETO P, FUNCIONARIO F WHERE P. Dnum = F.Dnr AND Projlocal < 10 AND Cpf < 3000
+COM ÍNDICE 5 ms
+SEM ÍNDICE 5 ms
+
+SELECT Salario FROM FUNCIONARIO WHERE Salario > 100 AND Salario < 200
+COM ÍNDICE 2 ms
+SEM ÍNDICE 3 ms
+
+SELECT Salario, Cpf FROM FUNCIONARIO F, PROJETO P WHERE F.Dnr = P. Dnum AND Salario = 500 AND Cpf > 7000
+COM ÍNDICE 2 ms
+SEM ÍNDICE 3 ms
+
+SELECT Cpf, Salario FROM FUNCIONARIO WHERE Cpf = 4000 AND Salario > 30
+COM ÍNDICE 1 ms
+SEM ÍNDICE 1 ms
+
+SELECT Salario, Cpf FROM FUNCIONARIO F, PROJETO P WHERE F.Dnr = P. Dnum AND Salario < 60 AND Cpf < 2000
+COM ÍNDICE 7 ms
+SEM ÍNDICE 6 ms
+
+COM ÍNDICE 10 of 10 statements executed in 93 ms
+SEM ÍNDICE 10 of 10 statements executed in 313 ms
